@@ -1,5 +1,6 @@
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 
 public class Reflexao {
 
@@ -23,7 +24,7 @@ public class Reflexao {
 
     private static void listarAtributos(Class<?> clazz) {
         Field[] campos = clazz.getDeclaredFields();
-            System.out.println("\nAtributos da classe " + clazz.getSimpleName() + ":");
+            System.out.println("Atributos da classe " + clazz.getSimpleName() + ":");
             for (Field campo : campos) {
                 System.out.println(" - " + campo.getName() + " (" + campo.getType().getSimpleName() + ")");
             }
@@ -32,10 +33,15 @@ public class Reflexao {
 
     private static void listarMetodos(Class<?> clazz) {
         Method[] metodos = clazz.getDeclaredMethods();
-            System.out.println("\nMétodos da classe " + clazz.getSimpleName() + ":");
+            System.out.println("Métodos da classe " + clazz.getSimpleName() + ":");
             for (Method metodo : metodos) {
                 System.out.println(" - " + metodo.getName());
+//                Parameter [] parametros = metodo.getParameters();
+//                for(Parameter pr : parametros) {
+//                    System.out.println(pr);
+//                }
             }
 
     }
+
 }
